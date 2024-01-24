@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+  background-color: rgb(226,255,251);
+  font-family: 'Urbanist', sans-serif;
+}
+html::-webkit-scrollbar{
+  display:none;
+}
+html{
+  scrollbar-width: none;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after{
+  color: deepskyblue !important;
+}
+
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background: deepskyblue !important;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: not-allowed;
+  scale: 0.7;
+}
+
+.central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  box-shadow: 0.5em 1em 1em blueviolet,
+    -0.5em 0.5em 1em blue,
+    0.5em -0.5em 1em purple,
+    -0.5em -0.5em 1em cyan;
+}
+
+.external-shadow {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0.5em 0.5em 3em blueviolet,
+    -0.5em 0.5em 3em blue,
+    0.5em -0.5em 3em purple,
+    -0.5em -0.5em 3em cyan;
+  z-index: 999;
+  animation: rotate 3s linear infinite;
+  background-color: #212121;
+}
+
+.intern {
+  position: absolute;
+  color: white;
+  z-index: 9999;
+}
+
+.intern::before {
+  content: "100%";
+  animation: percent 2s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  background: radial-gradient(circle closest-side,#000 94%,#0000) right/calc(200% - 1em) 100%;
+  animation: l24 1s infinite alternate linear;
+}
+
+.loader::before {
+  content: "Loading...";
+  line-height: 1em;
+  color: #0000;
+  background: inherit;
+  background-image: radial-gradient(circle closest-side,#fff 94%,#000);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+@keyframes l24 {
+  100% {
+    background-position: left
+  }
+}
